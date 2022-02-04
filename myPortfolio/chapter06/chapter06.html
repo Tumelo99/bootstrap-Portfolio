@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+p {
+    font-size: 2.5em;
+}
+.eye {
+    background-color: blue;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+}
+.arm {
+    background-color: #cacaca;
+    position: absolute;
+    top: 35%;
+    width: 3%;
+    height: 40%;
+}
+
+#head {
+    width:30%;
+    height:30%;
+    border-radius: 15%;
+    background-color: #dadada;
+    position: absolute;
+    left: 33%;
+    top: 5%;
+}
+#righteye {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+#lefteye {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+}
+#nose {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    width: 10%;
+    height: 10%;
+    background-color: black;
+}
+#mouth {
+    position: absolute;
+    width: 65%;
+    height: 15%;
+    left: 20%;
+    top: 70%;
+    background-color: red;
+}
+#body {
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    width: 45%;
+    height: 55%;
+    background-color: #dadada;
+    text-align:center;
+    padding-top: 30px;
+    
+}
+
+#rightarm {
+    position:absolute;
+    left:22%;
+}
+#leftarm {
+    position: absolute;
+    left: 70%;
+    width: 27%;
+    height: 5%;
+}
+    </style>
+</head>
+<body>
+    <div id="robot">
+        <div id="head">
+            <div class="eye" id="righteye"></div>
+            <div class="eye" id="lefteye"></div>
+            <div id="nose"></div>
+            <div id="mouth"></div>
+        </div>
+        <div class="arm" id="rightarm"></div>
+        <div id="body"><p>I &lt;3 JS!</p></div>
+        <div class="arm" id="leftarm"></div>
+        </div>
+
+<script>
+var rightEye = document.getElementById("righteye");
+var leftEye = document.getElementById("lefteye");
+var leftArm = document.getElementById("leftarm");
+var rightArm = document.getElementById("rightarm");
+
+rightEye.addEventListener("click", moveUpDown);
+leftEye.addEventListener("click", moveUpDown);
+leftArm.addEventListener("click", moveRightLeft);
+rightArm.addEventListener("click", armUpDown);
+
+function armUpDown(k){
+    var upArm = k.target;
+    var top = 0;
+    var nj = setInterval(move, 10);
+
+    function move(){
+        upArm.style.top = top + "%";
+        top++;
+        if(top === 36){
+            clearInterval(nj)
+        }
+    }
+}
+function moveUpDown(e) {
+  var robotPart = e.target;
+  var top = 0;
+
+  var id = setInterval(frame, 10) // draw every 10ms
+
+  function frame() {
+    robotPart.style.top = top + '%';    
+    top++;
+    if (top === 20){
+      clearInterval(id);
+    }
+  }
+  
+}
+function moveRightLeft(e) {
+  var robotPart = e.target;
+  var left = 0;
+  var id = setInterval(frame, 10) // draw every 10ms
+  function frame() {
+    robotPart.style.left = left + '%';
+    left++;
+    if (left === 70){
+        //leftArm.style.zIndex = "-1";
+      clearInterval(id);
+    }
+  }
+}
+
+</script>
+</body>
+</html>

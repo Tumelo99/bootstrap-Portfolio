@@ -1,0 +1,43 @@
+body{
+    margin:0px;
+    padding:20px;
+}
+a{
+    color:#fff;
+    background-color: tomato;
+    padding:4px;
+    text-decoration: none;
+}
+a:hover{
+    color:tomato;
+    background-color: #fff;
+}
+#myH3{
+    color:seagreen;
+}
+#txtBox{
+    outline: none;
+}
+#myP{
+    color:#3938977c;
+}
+#myBtn{
+    border:none;
+    background-color: mediumseagreen;
+    color:#fff;
+    padding:12px;
+    border-radius: 10px;
+}
+#myBtn:hover{
+
+}
+.frame{
+  width:600px;
+  height:200px;
+}
+.myBtn{
+    background-color: turquoise;
+    color:red;
+    border:none;
+    cursor:pointer;
+}

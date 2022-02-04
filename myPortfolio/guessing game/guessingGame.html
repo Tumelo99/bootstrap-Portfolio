@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body><div id="game">
+    <p>Guess a number from 1 to 10:</p>
+    <input id="guess" type ="number"></input>
+    <button id="start" onclick="guessNum()">Guess</button>
+    <p id="hint"></p>
+    </div>
+    
+<script>
+
+//var guess;
+//var inpt = prompt("Guess a number between 1 and 10");
+
+
+
+/*function guessNum(){
+    guess = parseInt(document.getElementById("guess").value);
+    if(guess == num){
+        alert("You got it right!!");
+    }
+    if(guess > num){
+        alert("Try a lower number");
+    }
+    if(guess < num){
+        alert("Try a higher number");
+    }
+}*/
+var startBtn = document.getElementById("start");
+start.onclick = promptGuess;
+
+var num = Math.floor(Math.random()*10) + 1;
+
+function promptGuess(){
+    var answr = prompt("Guess a number from 1 to 10:");
+    answr = Number(answr);
+    checkAnswr(answr);
+}
+function checkAnswr(guess){
+    if(guess === num){
+        alert("You got it right");
+    }
+    else if(guess < num){
+        alert("Try a higher number");
+        promptGuess();
+    }
+    else if(guess > num){
+        alert("Try a lower number");
+        promptGuess();
+    }
+    else{
+        alert("Invalid input");
+        promptGuess();
+    }
+}
+
+/*function guessNum() {
+    guess = parseInt(document.getElementById("guess").value);
+    if (guess == num) {
+        $("#hint").fadeOut(0);
+        $("#hint").fadeIn(500);
+        $("#Hint").css("font-weight", "bold");
+       // $("#Hint").html("You got it right!!");
+    }
+    if (guess>num){ 
+        $("#hint").fadeOut(0);
+        $("#hint").fadeIn(700);
+        $("#Hint").html("Try a <b>lower</b> number!");
+    }
+    if (guess<num){
+        $("#hint").fadeOut(0);
+        $("#hint").fadeIn(700);
+        $("#hint").html("Try a <b>higher</b> number!");
+    }
+}*/
+</script>
+</body>
+</html>
