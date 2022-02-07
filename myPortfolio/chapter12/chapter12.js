@@ -3,9 +3,6 @@ var slow = 250;
 var trainPosition = 0;
 var animation;
 
-alert("add a start button and extend the track");
-//instead of clicking the train, click the start button
-
 var start = document.getElementById("startButton");
 start.addEventListener("click", speedUp);
 
